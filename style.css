@@ -304,3 +304,27 @@ p { margin: 0 0 1em; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* Asset without a container, rounded like the boxes */
+.plain { grid-column: span 2; margin: 0; }
+.plain img, .plain video { display: block; width: 100%; height: auto; border-radius: 24px; }
+
+/* Assets side by side in one black frame */
+.pair {
+  grid-column: span 2;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  padding: 3%;
+  background: #000;
+  border-radius: 24px;
+}
+.pair .cell { min-width: 0; }
+.pair img, .pair video { display: block; width: 100%; height: auto; border-radius: 14px; }
+
+@media (max-width: 720px) {
+  .plain { grid-column: span 1; }
+  .plain img, .plain video { border-radius: 16px; }
+  .pair { grid-column: span 1; gap: 8px; border-radius: 16px; }
+  .pair img, .pair video { border-radius: 8px; }
+}
