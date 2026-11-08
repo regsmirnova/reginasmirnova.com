@@ -328,3 +328,8 @@ p { margin: 0 0 1em; }
   .pair { grid-column: span 1; gap: 8px; border-radius: 16px; }
   .pair img, .pair video { border-radius: 8px; }
 }
+
+/* Boxed asset that keeps its own shape */
+.box-fit { aspect-ratio: auto; }
+.box-fit .asset { padding: 3%; }
+.box-fit img, .box-fit video { width: 100%; }
